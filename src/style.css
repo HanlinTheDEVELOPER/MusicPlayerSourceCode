@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #01234e;
+  font-family: "Poppins", sans-serif;
+}
+.App {
+  display: flex;
+}
+.sideBar {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px;
+}
+.list-group-item {
+  padding: 6px 15px;
+  margin-top: 2px;
+  border-radius: 5px;
+  font-size: larger;
+  font-weight: 800;
+  text-shadow: 1px 1px rgb(45, 67, 87);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.list-group-item i {
+  margin-right: 10px;
+  font-size: x-large;
+}
+.list-group-item:nth-child(4) {
+  margin-top: auto;
+}
+.main {
+  position: absolute;
+  right: 0;
+  width: 80%;
+  min-height: 120vh;
+}
+section {
+  padding: 20px;
+}
+.tab-header {
+  text-align: center;
+  padding-bottom: 12px;
+}
+.each-song {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px;
+  border-bottom: 1px solid black;
+}
+.each-song > h5,
+.each-song > p {
+  width: 30%;
+  overflow: hidden;
+  cursor: pointer;
+}
+hr {
+  background-color: #06090c;
+  height: 0.1rem;
+  margin-block: 1rem;
+  box-shadow: 2px 2px 12px goldenrod;
+}
+.main-image-container {
+  display: flex;
+  justify-content: flex-start;
+  position: sticky;
+  top: 20px;
+  z-index: 5;
+}
+.main-image {
+  font-size: 200px;
+  line-height: 12px;
+  background-color: transparent;
+  border-radius: 5%;
+  border: 2px solid red;
+  padding: 20px;
+  height: fit-content;
+}
+.player-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+}
+.button-container {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  font-size: 25px;
+}
+.song-fact-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.progress-container {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-bottom: 4px solid rgb(22, 78, 80);
+  box-shadow: 0px 2px 5px solid gainsboro;
+}
+.play {
+  font-size: x-large;
+  animation: iconSpin 1s ease-out 0s infinite;
+}
+.guide-head {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+.guide-text {
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  color: aquamarine;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: #01234e;
+  padding: 12px 30px;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+.btn:hover {
+  color: #01234e;
+  background-color: transparent;
+  border: 2px solid #01234e;
+}
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes imgSpin {
+  from {
+    transform: rotate(-25deg) scale(1);
+  }
+  to {
+    transform: rotate(25deg) scale(1.2);
+  }
+}
+
+@media (max-width: 486px) {
+  .sideBar {
+    width: 15%;
+    padding-inline: 1px;
+  }
+  .list-group-item span {
+    display: none;
+  }
+  .list-group-item i {
+    margin: 0;
+  }
+  .main {
+    width: 85%;
+  }
+  .main-image-container {
+    justify-content: center;
+  }
+  .each-song > h5 {
+    width: 40%;
+  }
+  .each-song > p {
+    display: none;
+  }
+  .player-container {
+    width: 85%;
+  }
+  .button-container {
+    width: 30%;
+  }
+}
